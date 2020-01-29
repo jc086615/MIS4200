@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -18,4 +19,6 @@ namespace CarrMIS4200.Models
 
         public DateTime customerSince { get; set; }
     }
+   
+
 }
