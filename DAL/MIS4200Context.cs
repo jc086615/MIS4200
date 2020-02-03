@@ -15,5 +15,7 @@ namespace CarrMIS4200.DAL
         }
         public DbSet<customer> Customers { get; set; }
         public DbSet<Orders> Orders { get; set; }
+        public DbSet<OrderDetail> OrderDetail { get; set; }
+        public DbSet<Products> Products { get; set; }
     }
 }
