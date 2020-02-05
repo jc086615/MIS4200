@@ -9,6 +9,8 @@ namespace CarrMIS4200.Models
     public class customer
     {
         public int customerID { get; set; }
+
+        [Display(Name="LastName")]
         public string customerLastName { get; set; }
 
         public string customerFirstName { get; set; }
