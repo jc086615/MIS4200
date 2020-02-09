@@ -11,6 +11,8 @@ namespace CarrMIS4200.Migrations.MISContext
         {
             AutomaticMigrationsEnabled = true;
             MigrationsDirectory = @"Migrations\MISContext";
+            //ContextKey = "CarrMIS4200.DAL.MIS4200Context";
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(CarrMIS4200.DAL.MIS4200Context context)

@@ -19,6 +19,10 @@ namespace CarrMIS4200.DAL
         public DbSet<Orders> Orders { get; set; }
         public DbSet<OrderDetail> OrderDetail { get; set; }
         public DbSet<Products> Products { get; set; }
+        public DbSet<Patient> Patient { get; set; }
+        public DbSet<Appointment> Appointment { get; set; }
+
+        public DbSet<Doctor> Doctor { get; set; }
 
         // add this method - it will be used later
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
