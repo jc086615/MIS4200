@@ -24,6 +24,8 @@ namespace CarrMIS4200.DAL
 
         public DbSet<Doctor> Doctor { get; set; }
 
+        public DbSet<UserDetail> UserDetail { get; set; }
+
         // add this method - it will be used later
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
