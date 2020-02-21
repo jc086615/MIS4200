@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using CarrMIS4200.DAL;
 using CarrMIS4200.Models;
+using Microsoft.AspNet.Identity;
 
 namespace CarrMIS4200.Controllers
 {
@@ -51,9 +52,22 @@ namespace CarrMIS4200.Controllers
         {
             if (ModelState.IsValid)
             {
-                userDetail.ID = Guid.NewGuid();
-                db.UserDetail.Add(userDetail);
-                db.SaveChanges();
+                Guid memberID;
+                Guid.TryParse(User.Identity.GetUserId(), out memberID);
+                userDetail.ID = memberID;
+                //userDetail.ID = Guid.NewGuid();
+                try
+                {
+                    db.UserDetail.Add(userDetail);
+                    db.SaveChanges();
+
+                }
+                catch (Exception)
+                {
+
+                    return View("DupUser");
+                }
+                
                 return RedirectToAction("Index");
             }
 
@@ -61,6 +75,7 @@ namespace CarrMIS4200.Controllers
         }
 
         // GET: UserDetails/Edit/5
+        [Authorize]
         public ActionResult Edit(Guid? id)
         {
             if (id == null)
