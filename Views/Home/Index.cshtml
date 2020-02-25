@@ -14,7 +14,7 @@
         <p>
             I am graduating December 2020.
         </p>
-        <p><a class="btn btn-default" href="https://www.linkedin.com/in/jess-carr/">Learn more &raquo;</a></p>
+        <p><a class="btn btn-success" href="https://www.linkedin.com/in/jess-carr/">Learn more &raquo;</a></p>
     </div>
     <div class="col-md-4">
         <h2>Undergraduate Majors</h2>
@@ -22,13 +22,25 @@
             Accounting, Business Pre-Law, International Business, Management Information Systems, Business Analytics,
             Entrepreneurship Major, Management & Strategic Leadership, Sport Management, Business Economics, Finance, Marketing
         </p>
-        @Html.ActionLink("Customers", "index", "Customers")
-        @Html.ActionLink("Orders", "index", "Orders")
-        @Html.ActionLink("Products", "index", "Products")
-        @Html.ActionLink("Doctors", "index", "Doctors")
-        @Html.ActionLink("Appointments", "index", "Appointments")
-        @Html.ActionLink("Patients", "index", "Patients")
-        <p><a class="btn btn-default" href="https://business.ohio.edu/academics/">Learn more &raquo;</a></p>
+        <label for="Models">Choose a Model:</label>
+        <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                SD3
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                
+                
+                
+                <li>@Html.ActionLink("Doctors", "index", "Doctors")</li>
+                <li>@Html.ActionLink("Appointments", "index", "Appointments")</li>
+                <li>@Html.ActionLink("Patients", "index", "Patients")</li>
+            </ul>
+        </div>
+
+
+      
+        <p><a class="btn btn-warning" href="https://business.ohio.edu/academics/">Learn more &raquo;</a></p>
     </div>
     <div class="col-md-4">
         <h2>Selective Programs</h2>

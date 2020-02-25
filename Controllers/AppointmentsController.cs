@@ -40,8 +40,8 @@ namespace CarrMIS4200.Controllers
         // GET: Appointments/Create
         public ActionResult Create()
         {
-            ViewBag.doctorId = new SelectList(db.Doctor, "doctorId", "docLastName");
-            ViewBag.patientId = new SelectList(db.Patient, "patientId", "patientLastName");
+            ViewBag.doctorId = new SelectList(db.Doctor, "doctorId", "fullName");
+            ViewBag.patientId = new SelectList(db.Patient, "patientId", "fullName");
             return View();
         }
 
@@ -59,8 +59,8 @@ namespace CarrMIS4200.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.doctorId = new SelectList(db.Doctor, "doctorId", "docLastName", appointment.doctorId);
-            ViewBag.patientId = new SelectList(db.Patient, "patientId", "patientLastName", appointment.patientId);
+            ViewBag.doctorId = new SelectList(db.Doctor, "doctorId", "fullName", appointment.doctorId);
+            ViewBag.patientId = new SelectList(db.Patient, "patientId", "fullName", appointment.patientId);
             return View(appointment);
         }
 
@@ -94,8 +94,8 @@ namespace CarrMIS4200.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.doctorId = new SelectList(db.Doctor, "doctorId", "docLastName", appointment.doctorId);
-            ViewBag.patientId = new SelectList(db.Patient, "patientId", "patientLastName", appointment.patientId);
+            ViewBag.doctorId = new SelectList(db.Doctor, "doctorId", "fullName", appointment.doctorId);
+            ViewBag.patientId = new SelectList(db.Patient, "patientId", "fullName", appointment.patientId);
             return View(appointment);
         }
 

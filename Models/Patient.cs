@@ -10,12 +10,15 @@ namespace CarrMIS4200.Models
     {
         public int patientId { get; set; }
 
-        [Required(ErrorMessage = "Patients first name is required")]
+        [Display(Name = "Patient Full Name")]
+        public string fullName { get { return patientLastName + ", " + patientFirstName; } }
+
+        [Required(ErrorMessage = "Patients last name is required")]
         [Display(Name = "Last Name")]
         [StringLength(20)]
         public string patientLastName { get; set; }
 
-        [Required(ErrorMessage = "Patients last name is required")]
+        [Required(ErrorMessage = "Patients first name is required")]
         [Display(Name = "First Name")]
         [StringLength(20)]
         public string patientFirstName { get; set; }
@@ -36,9 +39,12 @@ namespace CarrMIS4200.Models
 
         [Display(Name = "Current Office for Appointments")]
         public string Office { get; set; }
+
+       
         
 
-        
+
+
 
         public ICollection<Appointment> Appointment { get; set; }
     }

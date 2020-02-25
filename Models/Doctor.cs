@@ -9,13 +9,16 @@ namespace CarrMIS4200.Models
     public class Doctor
     {
         public int doctorId { get; set; }
+        
+        [Display(Name = "Doctor Full Name")]
+        public string fullName { get { return docLastName + ", " + docFirstName; } }
 
-        [Required(ErrorMessage = "Doctor's first name is required")]
+        [Required(ErrorMessage = "Doctor's last name is required")]
         [Display(Name = "Last Name")]
         [StringLength(20)]
         public string docLastName { get; set; }
 
-        [Required(ErrorMessage = "Doctor's last name is required")]
+        [Required(ErrorMessage = "Doctor's first name is required")]
         [Display(Name = "First Name")]
         [StringLength(20)]
         public string docFirstName { get; set; }
@@ -25,6 +28,9 @@ namespace CarrMIS4200.Models
         [RegularExpression(@"^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$",
            ErrorMessage = "Must be correctely formated number ex:xxx-xxx-xxxx")]
         public string docPhone { get; set; }
+
+        
+       
         public ICollection<Appointment> Appointment { get; set; }
     }
 }
